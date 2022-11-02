@@ -4,7 +4,7 @@ import BOXOFFICE from '../../fixtures/boxoffice';
 
 describe('api', () => {
   const mockFetch = (data) => {
-    global.fetch = jest.fn().mockRejectedValue({
+    global.fetch = jest.fn().mockResolvedValue({
       async json() { return data; },
     });
   };
@@ -15,8 +15,7 @@ describe('api', () => {
     });
 
     it('returns boxoffice', async () => {
-      const data = await fetchBoxoffice({ targetDate: '20120101' });
-      const boxoffice = JSON.stringify(data);
+      const boxoffice = await fetchBoxoffice({ targetDate: '20120101' });
 
       expect(boxoffice).toEqual(BOXOFFICE);
     });
