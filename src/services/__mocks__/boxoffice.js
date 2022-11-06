@@ -1,3 +1,3 @@
-export default async function fetchBoxoffice() {
+export default async function fetchDailyBoxOffice() {
   return [];
 }

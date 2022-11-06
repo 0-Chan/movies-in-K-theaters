@@ -1,21 +1,31 @@
+import { useEffect } from 'react';
+
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+
+import { loadInitialList } from './store/actions';
+
 import Header from './components/Header';
 
-import fetchBoxoffice from './services/api';
+import HomePage from './pages/HomePage';
 
 export default function App() {
-  const date = new Date();
-  date.setDate(date.getDate() - 1);
-  const YYYY = date.getFullYear();
-  const MM = (date.getMonth() + 1).toString().padStart(2, '0');
-  const DD = date.getDate().toString().padStart(2, '0');
-  const targetDate = YYYY + MM + DD;
+  const dispatch = useDispatch();
 
-  const boxoffice = fetchBoxoffice({ targetDate });
-  console.log('🚀 | boxoffice', boxoffice);
+  useEffect(() => {
+    dispatch(loadInitialList());
+  });
   return (
     <>
       <Header />
       Hello, React!
+      <Routes>
+        <Route index path="/" element={<HomePage />} />
+      </Routes>
     </>
   );
 }

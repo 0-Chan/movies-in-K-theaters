@@ -1,6 +1,6 @@
-import fetchBoxoffice from './api';
+import fetchDailyBoxOffice from './api';
 
-import BOXOFFICE from '../../fixtures/boxoffice';
+import DAILYBOXOFFICE from '../../fixtures/dailyboxoffice';
 
 describe('api', () => {
   const mockFetch = (data) => {
@@ -9,15 +9,15 @@ describe('api', () => {
     });
   };
 
-  describe('fetchBoxoffice', () => {
+  describe('fetchDailyBoxOffice', () => {
     beforeEach(() => {
-      mockFetch(BOXOFFICE);
+      mockFetch(DAILYBOXOFFICE);
     });
 
-    it('returns boxoffice', async () => {
-      const boxoffice = await fetchBoxoffice({ targetDate: '20120101' });
+    it('returns dailyboxoffice', async () => {
+      const dailyboxoffice = await fetchDailyBoxOffice({ targetDate: '20120101' });
 
-      expect(boxoffice).toEqual(BOXOFFICE);
+      expect(dailyboxoffice).toEqual(DAILYBOXOFFICE);
     });
   });
 });
