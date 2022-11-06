@@ -12,6 +12,7 @@ import { loadInitialList } from './store/actions';
 import Header from './components/Header';
 
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export default function App() {
       Hello, React!
       <Routes>
         <Route index path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
