@@ -15,9 +15,12 @@ describe('api', () => {
     });
 
     it('returns dailyboxoffice', async () => {
-      const dailyboxoffice = await fetchDailyBoxOffice({ targetDate: '20120101' });
+      const dailyboxoffice = await fetchDailyBoxOffice('20120101');
 
-      expect(dailyboxoffice).toEqual(DAILYBOXOFFICE);
+      const key = 'boxOfficeResult.dailyBoxOfficeList';
+      const keys = key.split('.');
+
+      expect(dailyboxoffice).toEqual(DAILYBOXOFFICE[keys[0]][keys[1]]);
     });
   });
 });

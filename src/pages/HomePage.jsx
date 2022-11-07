@@ -13,8 +13,8 @@ export default function HomePage() {
     <>
       {
         dailyboxoffice.map((movie) => (
-          <div key={movie.boxOfficeResult.dailyBoxOfficeList.movieCd}>
-            {movie.boxOfficeResult.dailyBoxOfficeList.movieNm}
+          <div key={movie.movieCd}>
+            {movie.movieNm}
           </div>
         ))
       }

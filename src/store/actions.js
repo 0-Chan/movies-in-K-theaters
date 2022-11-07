@@ -7,9 +7,9 @@ export function setDailyBoxOffice(dailyboxoffice) {
   };
 }
 
-export function loadInitialList() {
+export function loadInitialList(targetDate) {
   return async (dispatch) => {
-    const dailyboxoffice = await fetchDailyBoxOffice();
+    const dailyboxoffice = await fetchDailyBoxOffice(targetDate);
     dispatch(setDailyBoxOffice(dailyboxoffice));
   };
 }
