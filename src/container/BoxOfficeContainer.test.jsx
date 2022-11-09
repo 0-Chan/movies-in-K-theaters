@@ -8,9 +8,9 @@ import BoxOfficeContainer from './BoxOfficeContainer';
 
 import BOXOFFICE from '../../fixtures/boxoffice';
 
-const key = 'boxOfficeResult.dailyBoxOfficeList';
-const keys = key.split('.');
-const DAILYBOXOFFICE = BOXOFFICE[keys[0]][keys[1]];
+// const key = 'boxOfficeResult.dailyBoxOfficeList';
+// const keys = key.split('.');
+const DAILYBOXOFFICE = BOXOFFICE.boxOfficeResult.dailyBoxOfficeList;
 
 jest.mock('react-redux');
 

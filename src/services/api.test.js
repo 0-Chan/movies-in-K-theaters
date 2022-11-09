@@ -17,9 +17,7 @@ describe('api', () => {
     it('returns dailyboxoffice', async () => {
       const dailyboxoffice = await fetchDailyBoxOffice('20120101');
 
-      const key = 'boxOfficeResult.dailyBoxOfficeList';
-      const keys = key.split('.');
-      const DAILYBOXOFFICE = BOXOFFICE[keys[0]][keys[1]];
+      const DAILYBOXOFFICE = BOXOFFICE.boxOfficeResult.dailyBoxOfficeList;
 
       expect(dailyboxoffice).toEqual(DAILYBOXOFFICE);
     });

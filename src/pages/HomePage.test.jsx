@@ -6,9 +6,7 @@ import HomePage from './HomePage';
 
 import BOXOFFICE from '../../fixtures/boxoffice';
 
-const key = 'boxOfficeResult.dailyBoxOfficeList';
-const keys = key.split('.');
-const DAILYBOXOFFICE = BOXOFFICE[keys[0]][keys[1]];
+const DAILYBOXOFFICE = BOXOFFICE.boxOfficeResult.dailyBoxOfficeList;
 
 describe('HomePage', () => {
   beforeEach(() => {
