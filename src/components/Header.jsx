@@ -20,7 +20,9 @@ export default function Header() {
         </Link>
       </header>
       <nav role="navigation">
-        헤더
+        <ul>
+          <li><Link to="/about">About</Link></li>
+        </ul>
       </nav>
     </>
   );

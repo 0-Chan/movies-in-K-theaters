@@ -12,6 +12,6 @@ describe('Header', () => {
       </MemoryRouter>,
     );
 
-    expect(container).toHaveTextContent('헤더');
+    expect(container).toHaveTextContent('About');
   });
 });
