@@ -6,7 +6,7 @@ const reducers = {
   setDailyBoxOffice(state, { payload: { dailyboxoffice } }) {
     return {
       ...state,
-      dailyboxoffice,
+      dailyBoxOffice,
     };
   },
 };

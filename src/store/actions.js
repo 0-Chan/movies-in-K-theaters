@@ -1,15 +1,15 @@
 import fetchDailyBoxOffice from '../services/api';
 
-export function setDailyBoxOffice(dailyboxoffice) {
+export function setDailyBoxOffice(dailyBoxOffice) {
   return {
     type: 'setDailyBoxOffice',
-    payload: { dailyboxoffice },
+    payload: { dailyBoxOffice },
   };
 }
 
 export function loadInitialList(targetDate) {
   return async (dispatch) => {
-    const dailyboxoffice = await fetchDailyBoxOffice(targetDate);
-    dispatch(setDailyBoxOffice(dailyboxoffice));
+    const dailyBoxOffice = await fetchDailyBoxOffice(targetDate);
+    dispatch(setDailyBoxOffice(dailyBoxOffice));
   };
 }
