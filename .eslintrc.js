@@ -19,6 +19,7 @@ module.exports = {
   ],
   globals: {
     context: 'readonly',
+    given: 'readonly',
   },
   rules: {
     'react/prop-types': 'off',

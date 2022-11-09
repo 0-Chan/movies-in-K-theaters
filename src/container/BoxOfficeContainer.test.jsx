@@ -15,13 +15,15 @@ const DAILYBOXOFFICE = BOXOFFICE[keys[0]][keys[1]];
 jest.mock('react-redux');
 
 describe('BoxOfficeContainer', () => {
+  beforeEach(() => {
+    useSelector.mockClear();
+    useSelector.mockImplementation((selector) => selector({
+      dailyBoxOffice: given.dailyBoxOffice,
+    }));
+  });
+
   context('with dailyBoxOffice', () => {
-    beforeEach(() => {
-      useSelector.mockClear();
-      useSelector.mockImplementation((selector) => selector({
-        dailyBoxOffice: DAILYBOXOFFICE,
-      }));
-    });
+    given('dailyBoxOffice', () => (DAILYBOXOFFICE));
     it('renders dailyBoxOffice', async () => {
       const { container } = render((
         <MemoryRouter>
@@ -35,6 +37,19 @@ describe('BoxOfficeContainer', () => {
         expect(container).toHaveTextContent(movieNm);
         expect(container).toHaveTextContent(rankOldAndNew);
       });
+    });
+  });
+
+  context('without dailyBoxOffice', () => {
+    given('dailyBoxOffice', () => null);
+    it('renders loading', () => {
+      const { container } = render((
+        <MemoryRouter>
+          <BoxOfficeContainer />
+        </MemoryRouter>
+      ));
+
+      expect(container).toHaveTextContent('Loading...');
     });
   });
 });
