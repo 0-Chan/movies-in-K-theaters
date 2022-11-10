@@ -11,7 +11,7 @@ import { loadInitialList } from './store/actions';
 
 import Header from './components/Header';
 
-import HomePage from './pages/HomePage';
+import MainPage from './pages/MainPage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DetailsPage from './pages/DetailsPage';
@@ -34,7 +34,7 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route index path="/" element={<HomePage />} />
+        <Route index path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/boxoffice/:rank" element={<DetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />

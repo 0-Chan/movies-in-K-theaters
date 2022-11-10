@@ -2,13 +2,13 @@ import { render } from '@testing-library/react';
 
 import { useSelector } from 'react-redux';
 
-import HomePage from './HomePage';
+import MainPage from './MainPage';
 
 import BOXOFFICE from '../../fixtures/boxoffice';
 
 const DAILYBOXOFFICE = BOXOFFICE.boxOfficeResult.dailyBoxOfficeList;
 
-describe('HomePage', () => {
+describe('MainPage', () => {
   beforeEach(() => {
     useSelector.mockImplementation((selector) => selector({
       dailyBoxOffice: given.dailyBoxOffice,
@@ -17,8 +17,8 @@ describe('HomePage', () => {
 
   context('with dailyBoxOffice', () => {
     given('dailyBoxOffice', () => (DAILYBOXOFFICE));
-    it('renders HomePage', () => {
-      const { container } = render(<HomePage />);
+    it('renders MainPage', () => {
+      const { container } = render(<MainPage />);
 
       expect(container).toHaveTextContent('박스오피스');
       DAILYBOXOFFICE.forEach(({ movieNm }) => {
@@ -30,7 +30,7 @@ describe('HomePage', () => {
   context('without dailyBoxOffice', () => {
     given('dailyBoxOffice', () => null);
     it('renders loading', () => {
-      const { container } = render(<HomePage />);
+      const { container } = render(<MainPage />);
 
       expect(container).toHaveTextContent('Loading...');
     });
