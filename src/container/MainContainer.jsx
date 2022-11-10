@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import get from '../utils';
 
-export default function BoxOfficeContainer() {
+export default function MainContainer() {
   const dailyboxoffice = useSelector(get('dailyBoxOffice'));
 
   if (!dailyboxoffice) {

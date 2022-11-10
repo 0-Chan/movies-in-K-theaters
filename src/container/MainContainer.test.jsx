@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-import BoxOfficeContainer from './BoxOfficeContainer';
+import MainContainer from './MainContainer';
 
 import BOXOFFICE from '../../fixtures/boxoffice';
 
@@ -12,7 +12,7 @@ const DAILYBOXOFFICE = BOXOFFICE.boxOfficeResult.dailyBoxOfficeList;
 
 jest.mock('react-redux');
 
-describe('BoxOfficeContainer', () => {
+describe('MainContainer', () => {
   beforeEach(() => {
     useSelector.mockClear();
     useSelector.mockImplementation((selector) => selector({
@@ -25,7 +25,7 @@ describe('BoxOfficeContainer', () => {
     it('renders dailyBoxOffice', async () => {
       const { container } = render((
         <MemoryRouter>
-          <BoxOfficeContainer />
+          <MainContainer />
         </MemoryRouter>
       ));
 
@@ -43,7 +43,7 @@ describe('BoxOfficeContainer', () => {
     it('renders loading', () => {
       const { container } = render((
         <MemoryRouter>
-          <BoxOfficeContainer />
+          <MainContainer />
         </MemoryRouter>
       ));
 

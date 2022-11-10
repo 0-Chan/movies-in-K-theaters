@@ -1,9 +1,9 @@
-import BoxOfficeContainer from '../container/BoxOfficeContainer';
+import MainContainer from '../container/MainContainer';
 
 export default function HomePage() {
   return (
     <div>
-      <BoxOfficeContainer />
+      <MainContainer />
     </div>
   );
 }
