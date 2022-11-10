@@ -16,18 +16,17 @@ import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DetailsPage from './pages/DetailsPage';
 
-export default function App() {
-  const date = new Date();
-  date.setDate(date.getDate() - 1);
-  const YYYY = date.getFullYear();
-  const MM = (date.getMonth() + 1).toString().padStart(2, '0');
-  const DD = date.getDate().toString().padStart(2, '0');
-  const targetDate = YYYY + MM + DD;
+import { convertDateFormat } from './utils';
 
+export default function App() {
   const dispatch = useDispatch();
 
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayInString = convertDateFormat(yesterday);
+
   useEffect(() => {
-    dispatch(loadInitialList(targetDate));
+    dispatch(loadInitialList(yesterdayInString));
   }, []);
 
   return (

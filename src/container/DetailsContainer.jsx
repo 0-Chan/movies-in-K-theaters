@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import NotFoundPage from '../pages/NotFoundPage';
-import get from '../utils';
+
+import { get } from '../utils';
 
 export default function DetailsContainer({ rank }) {
   const vaildRanks = Array.from({ length: 10 }, (_, index) => index + 1);
