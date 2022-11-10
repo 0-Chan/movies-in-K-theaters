@@ -14,6 +14,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
+import DetailsPage from './pages/DetailsPage';
 
 export default function App() {
   const date = new Date();
@@ -35,6 +36,7 @@ export default function App() {
       <Routes>
         <Route index path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/boxoffice/:rank" element={<DetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

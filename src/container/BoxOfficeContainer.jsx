@@ -25,6 +25,7 @@ export default function BoxOfficeContainer() {
               개봉일:
               {movie.openDt}
               {movie.rankOldAndNew}
+              {movie.audiCnt}
             </p>
           </li>
         ))}
