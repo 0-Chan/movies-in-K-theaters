@@ -2,11 +2,19 @@ import { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
+import NotFoundPage from '../pages/NotFoundPage';
 import get from '../utils';
 
 export default function DetailsContainer({ rank }) {
+  const vaildRanks = Array.from({ length: 10 }, (_, index) => index + 1);
+  const isVaild = vaildRanks.includes(Number(rank));
+  if (!isVaild) {
+    return (<NotFoundPage />);
+  }
+
   const dailyboxoffice = useSelector(get('dailyBoxOffice'));
-  console.log('🚀 | dailyboxoffice', dailyboxoffice);
+  const targetBoxOffice = dailyboxoffice[rank - 1];
+
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -14,8 +22,6 @@ export default function DetailsContainer({ rank }) {
       setLoaded(true);
     }
   }, [dailyboxoffice]);
-
-  const targetBoxOffice = dailyboxoffice[rank];
 
   return (
     <>
@@ -34,15 +40,7 @@ export default function DetailsContainer({ rank }) {
           )
           : <span>로딩</span>
       }
-      {/* <div>
-        {targetBoxOffice.movieCd}
-      </div>
-      <div>
-        {targetBoxOffice.movieNm}
-      </div>
-      <div>
-        {targetBoxOffice.audiAcc}
-      </div> */}
+      {' '}
     </>
   );
 }
