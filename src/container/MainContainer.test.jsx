@@ -22,7 +22,7 @@ describe('MainContainer', () => {
 
   context('with dailyBoxOffice', () => {
     given('dailyBoxOffice', () => (DAILYBOXOFFICE));
-    it('renders dailyBoxOffice', async () => {
+    it('renders dailyBoxOffice', () => {
       const { container } = render((
         <MemoryRouter>
           <MainContainer />

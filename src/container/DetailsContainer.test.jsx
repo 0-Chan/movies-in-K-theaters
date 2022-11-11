@@ -12,6 +12,7 @@ jest.mock('react-redux');
 
 describe('DetailsContainer', () => {
   beforeEach(() => {
+    useSelector.mockClear();
     useSelector.mockImplementation((selector) => selector({
       dailyBoxOffice: given.dailyBoxOffice,
     }));
@@ -20,18 +21,18 @@ describe('DetailsContainer', () => {
   context('with dailyBoxOffice', () => {
     given('dailyBoxOffice', () => (DAILYBOXOFFICE));
     it('renders specific movie information', () => {
-      const { container } = render(<DetailsContainer />);
+      const { container } = render(<DetailsContainer rank="1" />);
 
-      expect(container).toHaveTextContent('');
+      expect(container).toHaveTextContent('미션임파서블');
     });
   });
 
   context('without dailyBoxOffice', () => {
     given('dailyBoxOffice', () => null);
-    it('renders "정보가 없어요!"', () => {
-      const { container } = render(<DetailsContainer />);
+    it('renders "Loading..."', () => {
+      const { container } = render(<DetailsContainer rank="1" />);
 
-      expect(container).toHaveTextContent('정보가 없어요!');
+      expect(container).toHaveTextContent('Loading...');
     });
   });
 });

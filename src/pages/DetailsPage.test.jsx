@@ -18,18 +18,22 @@ describe('DetailsPage', () => {
   context('with dailyBoxOffice', () => {
     given('dailyBoxOffice', () => (DAILYBOXOFFICE));
     it('renders specific movie information', () => {
-      const { container } = render(<DetailsPage />);
+      const params = { rank: '1' };
 
-      expect(container).toHaveTextContent('');
+      const { container } = render(<DetailsPage params={params} />);
+
+      expect(container).toHaveTextContent('미션임파서블');
     });
   });
 
   context('without dailyBoxOffice', () => {
     given('dailyBoxOffice', () => null);
-    it('renders "정보가 없어요!"', () => {
-      const { container } = render(<DetailsPage />);
+    it('renders "Loading..."', () => {
+      const params = { rank: '1' };
 
-      expect(container).toHaveTextContent('정보가 없어요!');
+      const { container } = render(<DetailsPage params={params} />);
+
+      expect(container).toHaveTextContent('Loading...');
     });
   });
 });
