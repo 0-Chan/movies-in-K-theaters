@@ -18,7 +18,7 @@ describe('NotFoundPage', () => {
   it('img contains correct attribute values', () => {
     const { getByRole } = render(<NotFoundPage />);
 
-    expect(getByRole('img')).toHaveAttribute('src', 'images/404.jpeg');
+    expect(getByRole('img')).toHaveAttribute('src', '/images/404.jpeg');
     expect(getByRole('img')).toHaveAttribute('alt', '404 not found');
   });
 });
