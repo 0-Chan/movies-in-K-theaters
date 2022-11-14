@@ -5,8 +5,6 @@
   <strong>설명<br />
 </p>
 
-<!-- TODO: Q.왜 이런 구조를 선택했나요? A. Will be describe in (decision-making.md) -->
-
 ## Tech Requirement (Tech Stack)
 - React
 - ESLint
@@ -26,4 +24,4 @@ $ npm run test
 ```
 
 ### Author
-- @0-Chan [Blog](https://chan-blog-0-chan.vercel.app/)
+- @0-Chan ([Blog](https://chan-blog-0-chan.vercel.app/))
