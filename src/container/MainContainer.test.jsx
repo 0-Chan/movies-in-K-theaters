@@ -31,9 +31,8 @@ describe('MainContainer', () => {
 
       expect(container).toHaveTextContent('박스오피스');
 
-      DAILYBOXOFFICE.forEach(({ movieNm, rankOldAndNew }) => {
+      DAILYBOXOFFICE.forEach(({ movieNm }) => {
         expect(container).toHaveTextContent(movieNm);
-        expect(container).toHaveTextContent(rankOldAndNew);
       });
     });
   });

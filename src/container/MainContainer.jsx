@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { get } from '../utils';
 
-import movies from '../data/moives';
+import metadata from '../data/metadata';
 
 export default function MainContainer() {
   const dailyboxoffice = useSelector(get('dailyBoxOffice'));
@@ -15,12 +15,6 @@ export default function MainContainer() {
     );
   }
 
-  const hell = dailyboxoffice[0];
-  console.log('🚀 | dailyboxoffice', dailyboxoffice);
-  // console.log('🚀 | hell', hell && hell.movieNm);
-
-  // console.log(true && movies.filter((data) => data.title === hell.movieNm));
-
   return (
     <>
       <h2>
@@ -30,30 +24,29 @@ export default function MainContainer() {
         {dailyboxoffice.map((movie) => (
           <li key={movie.movieCd}>
             <Link to={`/boxoffice/${movie.rank}`}>
-              <div>
-                { movies.filter((data) => data.title === movie.movieNm).map((user) => {
-                  return <p> {user.poster} </p>
-                }) }
-              </div>
-              {/* <img
-                src={
-                      `https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/
-                      86119/86119
-                      _320.jpg`
-                    }
-                alt="Movie postser"
-              /> */}
+              { metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
+                <div>
+                  <div>
+                    <img
+                      key={correspond.poster}
+                      src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/${correspond.poster}/${correspond.poster}_320.jpg`}
+                      alt="Movie postser"
+                    />
+                  </div>
+                  <div>
+                    {correspond.tags}
+                  </div>
+                </div>
+              ))}
             </Link>
-            <p>
-              제목:
-              {movie.movieCd}
-              <br />
+            <div>
+              제목 :
               {movie.movieNm}
-              개봉일:
-              {movie.openDt}
-              {movie.rankOldAndNew}
-              {movie.audiCnt}
-            </p>
+              <br />
+              누적 관객수 :
+              { Number(movie.audiAcc) > 10000 ? Math.floor(Number(movie.audiAcc) / 10000) : 'Under 1' }
+              만
+            </div>
           </li>
         ))}
       </ol>
