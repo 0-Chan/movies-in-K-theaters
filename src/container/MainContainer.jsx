@@ -15,6 +15,10 @@ export default function MainContainer() {
     );
   }
 
+  const handleError = (e) => {
+    e.target.src = '/images/onError-main.jpg';
+  };
+
   return (
     <>
       <h2>
@@ -30,6 +34,7 @@ export default function MainContainer() {
                     <img
                       key={correspond.poster}
                       src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/${correspond.poster}/${correspond.poster}_320.jpg`}
+                      onError={handleError}
                       alt="Movie postser"
                     />
                   </div>
