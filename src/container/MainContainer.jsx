@@ -38,7 +38,7 @@ export default function MainContainer() {
                     />
                   </div>
                   <div>
-                    {correspond.tags}
+                    {correspond.tags.map((tag) => <span key={tag}>{tag}</span>)}
                   </div>
                 </div>
               ))}
