@@ -29,11 +29,10 @@ export default function MainContainer() {
           <li key={movie.movieCd}>
             <Link to={`/boxoffice/${movie.rank}`}>
               { metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
-                <div>
+                <div key={correspond.poster}>
                   <div>
                     <img
-                      key={correspond.poster}
-                      src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/${correspond.poster}/${correspond.poster}_320.jpg`}
+                      src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_320.jpg`}
                       onError={handleError}
                       alt="Movie postser"
                     />
