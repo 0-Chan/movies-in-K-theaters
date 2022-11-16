@@ -24,13 +24,13 @@ export default function MainContainer() {
       <h2 className="text-3xl font-bold underline">
         박스오피스
       </h2>
-      <ol>
+      <ol className="grid grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-8 relative -mx-10 -mb-5/16 pt-16 h-[670px] lg:h-auto">
         {dailyboxoffice.map((movie) => (
           <li key={movie.movieCd}>
             <Link to={`/boxoffice/${movie.rank}`}>
               { metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
                 <div key={correspond.poster}>
-                  <div>
+                  <div className="relative p-2 md:p-4 bg-[#1D1E23] rounded">
                     <img
                       src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_320.jpg`}
                       onError={handleError}
