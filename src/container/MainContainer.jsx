@@ -21,7 +21,7 @@ export default function MainContainer() {
 
   return (
     <>
-      <h2>
+      <h2 className="text-3xl font-bold underline">
         박스오피스
       </h2>
       <ol>
