@@ -49,6 +49,16 @@ const metadata = [
     poster: '86420',
     tags: ['미개봉 기대작'],
   },
+  {
+    title: '동감',
+    poster: '86326',
+    tags: ['멜로'],
+  },
+  {
+    title: '정직한 후보2',
+    poster: '86191',
+    tags: ['역주행'],
+  },
 ];
 
 export default metadata;
