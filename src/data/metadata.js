@@ -47,7 +47,7 @@ const metadata = [
   {
     title: '데시벨',
     poster: '86420',
-    tags: ['미개봉 기대작'],
+    tags: ['스릴러'],
   },
   {
     title: '동감',
@@ -67,7 +67,7 @@ const metadata = [
   {
     title: '올빼미',
     poster: '86481',
-    tags: ['사극'],
+    tags: ['사극', '미개봉 기대작'],
   },
   {
     title: '한산 리덕스',
