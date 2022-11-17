@@ -59,6 +59,21 @@ const metadata = [
     poster: '86191',
     tags: ['역주행'],
   },
+  {
+    title: '폴: 600미터',
+    poster: '86338',
+    tags: ['손에 땀'],
+  },
+  {
+    title: '올빼미',
+    poster: '86481',
+    tags: ['사극'],
+  },
+  {
+    title: '한산 리덕스',
+    poster: '86522',
+    tags: ['감독판'],
+  },
 ];
 
 export default metadata;
