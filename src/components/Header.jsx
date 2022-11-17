@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div className="bg-indigo-700 p-2 flex justify-between items-center">
+    <div className="bg-indigo-700 p-1 flex justify-between items-center">
       <header
         className="flex items-center"
         role="banner"
@@ -21,6 +21,9 @@ export default function Header() {
             />
           </svg>
         </Link>
+        <h1 className="text-white text-2xl">
+          Movies-in-k-theater
+        </h1>
       </header>
       <nav role="navigation" className="block">
         <Link to="/" className="p-2 text-indigo-200 bg-indigo-500 rounded hover:text-indigo-100 mr-2">Home</Link>
