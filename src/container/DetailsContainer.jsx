@@ -30,21 +30,22 @@ export default function DetailsContainer({ rank }) {
     <>
       { metadata.filter((datum) => datum.title === targetBoxOffice?.movieNm).map((correspond) => (
         <div key={correspond.poster}>
-          <div>
+          <div className="bg-indigo-500">
             <img
               src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_1000.jpg`}
               onError={handleError}
               alt="Movie postser"
+              className="rounded-lg ml-3 md:ml-0 w-96 border-[6px] border-gray-500 bg-gray-900"
             />
-          </div>
-          <div>{targetBoxOffice.movieNm}</div>
-          <div>{targetBoxOffice.openDt}</div>
-          <div>
-            <div>{targetBoxOffice.rankInten}</div>
-            <div>{targetBoxOffice.audiAcc}</div>
-            <div>{targetBoxOffice.audiInten}</div>
-            <div>{targetBoxOffice.salesAcc}</div>
-            <div>{targetBoxOffice.salesShare}</div>
+            <div>{targetBoxOffice.movieNm}</div>
+            <div>{targetBoxOffice.openDt}</div>
+            <div>
+              <div>{targetBoxOffice.rankInten}</div>
+              <div>{targetBoxOffice.audiAcc}</div>
+              <div>{targetBoxOffice.audiInten}</div>
+              <div>{targetBoxOffice.salesAcc}</div>
+              <div>{targetBoxOffice.salesShare}</div>
+            </div>
           </div>
         </div>
       ))}
