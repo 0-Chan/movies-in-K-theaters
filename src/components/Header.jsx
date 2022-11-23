@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import Dropdowns from './Dropdowns';
+
 export default function Header() {
   return (
     <header className="flex w-full items-center justify-between px-2 h-16">
@@ -20,21 +22,24 @@ export default function Header() {
           Movies-in-k-theater
         </Link>
       </div>
-      <nav role="navigation" className="flex items-center">
+
+      <nav className="flex items-center">
         <Link to="/about" className="p-2 text-indigo-200 bg-indigo-500 rounded hover:text-indigo-100">About</Link>
         <span className="px-2">｜</span>
-        <div className="border-2 border-black rounded">
-          <select className="border-r-2 border-black">
-            <option selected disabled defaultValue>예매 하러가기</option>
-            <option value="http://www.cgv.co.kr/ticket/">CGV</option>
-            <option value="https://www.lottecinema.co.kr/NLCHS/Ticketing">롯데시네마</option>
-            <option value="https://www.megabox.co.kr/booking">메가박스</option>
-          </select>
-          <svg height="16" viewBox="0 0 24 24" className="inline-block mx-1">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path fillRule="evenodd" d="M18 20H4V6h10V4H2v18h18V10h-2v10z" />
-            <path fillRule="evenodd" d="M16 0v2h4.59L9.29 13.29l1.42 1.42L22 3.41V8h2V0h-8z" />
-          </svg>
+        <div>
+          <Dropdowns>
+            <ul className="absolute bg-white py-1 text-sm text-gray-700 text-center">
+              <li>
+                <a href="http://www.cgv.co.kr/ticket/" target="_blank" rel="noreferrer" className="block py-2 px-4 hover:bg-gray-100">CGV</a>
+              </li>
+              <li>
+                <a href="https://www.lottecinema.co.kr/NLCHS/Ticketing" target="blank" rel="noreferrer" className="block py-2 px-4 hover:bg-gray-100 ">롯데시네마</a>
+              </li>
+              <li>
+                <a href="https://www.megabox.co.kr/booking" target="blank" rel="noreferrer" className="block py-2 px-4 hover:bg-gray-100 ">메가박스</a>
+              </li>
+            </ul>
+          </Dropdowns>
         </div>
       </nav>
     </header>
