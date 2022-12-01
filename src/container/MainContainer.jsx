@@ -20,24 +20,23 @@ export default function MainContainer() {
   };
 
   return (
-    <div className="py-4 px-1 text-center bg-indigo-800 text-indigo-200">
-      <h1 className="text-5xl p-4 text-center font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-        박스오피스 무비차트
-      </h1>
-      {/* <h2 className="text-2xl font-bold">
-        박스오피스
-      </h2> */}
+    <div className="flex justify-center items-center flex-col h-screen">
+      <div className="max-w-screen-xl my-0 mx-auto w-full overflow-y-hidden">
+        <h1 className="text-6xl text-black mb-8 text-center font-bold">
+          박스오피스 무비챠-트
+        </h1>
+      </div>
       <div className="full-column max-w-full mx-auto py-1 md:py-3 px-1">
-        <div className="mb-12 md:mb-0 md:overflow-hidden" aria-roledescription="carousel">
+        <div className="mb-12 md:mb-0" aria-roledescription="carousel">
           <div className="relative">
-            <ol className="grid grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-4 relative">
+            <ul className="absolute flex mx-auto wh-full bg-smoky">
               {dailyboxoffice.map((movie) => (
                 <li
                   key={movie.movieCd}
                   className="border-solid border-2 border-indigo-400"
                 >
                   <Link to={`/boxoffice/${movie.rank}`}>
-                    { metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
+                    {metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
                       <div
                         key={correspond.poster}
                         className=""
@@ -66,7 +65,7 @@ export default function MainContainer() {
                   </div>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </div>
       </div>
