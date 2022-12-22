@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { loadInitialList } from './store/actions';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import MainPage from './pages/MainPage';
 import AboutPage from './pages/AboutPage';
@@ -17,6 +18,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import DetailsPage from './pages/DetailsPage';
 
 import { convertDateFormat } from './utils';
+import './styles/global.css';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-tr from-violet-400 to-cyan-300 font-sans">
+    <div className="bg-gradient-to-tr from-violet-500 to-cyan-400">
       <Header />
       <Routes>
         <Route index path="/" element={<MainPage />} />
@@ -38,6 +40,7 @@ export default function App() {
         <Route path="/boxoffice/:rank" element={<DetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
