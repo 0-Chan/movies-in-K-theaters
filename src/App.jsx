@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg-gradient-to-tr from-violet-400 to-cyan-300 font-sans">
       <Header />
       <Routes>
         <Route index path="/" element={<MainPage />} />
@@ -38,6 +38,6 @@ export default function App() {
         <Route path="/boxoffice/:rank" element={<DetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
