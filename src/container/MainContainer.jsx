@@ -14,7 +14,6 @@ import 'swiper/swiper-bundle.min.css';
 
 export default function MainContainer() {
   const dailyboxoffice = useSelector(get('dailyBoxOffice'));
-  console.log('🚀 | dailyboxoffice', dailyboxoffice);
 
   if (!dailyboxoffice) {
     return (
@@ -105,10 +104,6 @@ export default function MainContainer() {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide> */}
     </div>
   );
 }
