@@ -124,6 +124,11 @@ const metadata = [
     poster: '86669',
     tags: ['프랑스', '애니', '우주'],
   },
+  {
+    title: '눈의 여왕5: 스노우 프린세스와 미러랜드의 비밀',
+    poster: '86679',
+    tags: ['러시아', '애니', '눈'],
+  },
 ];
 
 export default metadata;
