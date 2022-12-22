@@ -5,6 +5,7 @@ import { get } from '../utils';
 
 import NotFoundPage from '../pages/NotFoundPage';
 import metadata from '../data/metadata';
+import ChartComponent from '../components/ChartComponent';
 
 export default function DetailsContainer({ rank }) {
   const vaildRanks = Array.from({ length: 10 }, (_, index) => index + 1);
@@ -38,7 +39,7 @@ export default function DetailsContainer({ rank }) {
               className="rounded-lg ml-6 md:ml-10 w-96 border-[6px] border-gray-500 bg-gray-900"
             />
             <div className="ml-4">
-              <h1 className="text-7xl text-center text-gray-900 truncate mb-2">
+              <h1 className="text-6xl text-center text-gray-900 truncate mb-2">
                 {targetBoxOffice.movieNm}
               </h1>
               <h2 className="text-4xl text-gray-800 mt-4">
@@ -64,15 +65,20 @@ export default function DetailsContainer({ rank }) {
                   {Number(targetBoxOffice.salesAcc).toLocaleString()}
                   원
                 </div>
-                <div>
-                  당일 매출 비율 :
-                  <br />
+                <div className="text-xl">
+                  당일 매출 비율 :&nbsp;
                   {targetBoxOffice.salesShare}
                   %
                   <br />
+                  <ChartComponent data={[
+                    { value: targetBoxOffice.salesShare },
+                    { value: 100 - targetBoxOffice.salesShare },
+                  ]}
+                  />
                   (당일 매출 총액 대비)
                 </div>
               </div>
+
             </div>
             <div className="text-center">
               {
