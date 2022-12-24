@@ -24,7 +24,9 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public', 'index.html'),
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
