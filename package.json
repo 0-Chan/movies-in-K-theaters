@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/0-Chan/movies-in-K-theaters/issues"
   },
-  "homepage": "https://github.com/0-Chan/movies-in-K-theaters#readme",
+  "homepage": "https://movies-in-k-theaters.vercel.app/",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
