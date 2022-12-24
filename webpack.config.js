@@ -2,6 +2,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  mode: 'production',
   entry: path.resolve(__dirname, 'src/index.jsx'),
   module: {
     rules: [
