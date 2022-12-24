@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { TrendingUp, TrendingDown } from 'react-feather';
 
 import { get } from '../utils';
+import onErrorImage from '../assets/images/onError-details.jpg';
 
 import NotFoundPage from '../pages/NotFoundPage';
 import metadata from '../data/metadata';
@@ -24,7 +25,7 @@ export default function DetailsContainer({ rank }) {
   const targetBoxOffice = dailyboxoffice[rank - 1];
 
   const handleError = (e) => {
-    e.target.src = '/images/onError-details.jpg';
+    e.target.src = onErrorImage;
   };
 
   return (

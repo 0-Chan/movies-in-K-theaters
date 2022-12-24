@@ -1,3 +1,5 @@
+import apiIntroduceImage from '../assets/images/api-introduce.png';
+
 export default function AboutPage() {
   return (
     <>
@@ -10,7 +12,7 @@ export default function AboutPage() {
         상세 영화 정보는 포스터를 눌러주세요.
         <br />
       </p>
-      <img src="/images/api-introduce.png" alt="api introduce" className="rounded-md" />
+      <img src={apiIntroduceImage} alt="api introduce" className="rounded-md" />
     </>
   );
 }

@@ -22,7 +22,7 @@ export default function MainContainer() {
   }
 
   const handleError = (e) => {
-    e.target.src = '/images/onError-main.jpg';
+    // e.target.src = '/images/onError-main.jpg';
     e.target.onerror = null;
   };
 
