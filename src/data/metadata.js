@@ -129,6 +129,11 @@ const metadata = [
     poster: '86679',
     tags: ['러시아', '애니', '눈'],
   },
+  {
+    title: '극장판 뽀로로와 친구들: 바이러스를 없애줘!',
+    poster: '85979',
+    tags: ['뽀로로', '애니'],
+  },
 ];
 
 export default metadata;
