@@ -20,7 +20,7 @@ export default function Header() {
                 strokeWidth="6"
               />
             </svg>
-            <h1 className="text-2xl md:text-3xl font-bold mt-[52px] -ml-4 bg-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mt-[52px] -ml-4 bg-gray-300 bg-clip-text text-transparent">
               K-Theater
             </h1>
           </Link>

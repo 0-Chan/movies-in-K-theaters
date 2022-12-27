@@ -31,15 +31,14 @@ export default function MainContainer() {
   return (
     <div className="h-screen">
       <div>
-        <h1 className="text-center font-semibold text-6xl text-gray-700">
+        <h1 className="text-center font-semibold text-3xl md:text-6xl text-gray-700">
           TOP 박스오피스
         </h1>
       </div>
 
       <Swiper
-        className="font-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[42%]"
-        spaceBetween={50}
-        slidesPerView="1"
+        className="font-black absolute top-1/2 left-1/2 transform -translate-x-[50%] -translate-y-[42%]"
+        slidesPerView={1}
         effect="coverflow"
         grabCursor
         centeredSlides
@@ -62,26 +61,24 @@ export default function MainContainer() {
           disableOnInteraction: true,
         }}
         breakpoints={{
-          320: {
+          540: {
             slidesPerView: 1,
-            spaceBetween: 4,
+            spaceBetween: 20,
           },
-          720: {
+          981: {
             slidesPerView: 3,
             spaceBetween: 20,
-            effect: 'coverflow',
           },
 
-          1300: {
-            slidesPerView: 3,
+          1536: {
+            slidesPerView: 4,
             spaceBetween: 30,
-            effect: 'coverflow',
           },
         }}
       >
         {dailyboxoffice.map((movie, index) => (
           <SwiperSlide key={movie.movieCd}>
-            <div className="max-w-[90%] max-h-[90%]">
+            <div className="max-w-[95%] max-h-[95%]">
               <div>
                 <img src={`https://top10.netflix.com/images/big_numbers/${index + 1}.png`} alt="number" width="64" height="64" className="object-cover self-start -mt-1 ml-7" />
               </div>
