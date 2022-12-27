@@ -37,9 +37,9 @@ export default function MainContainer() {
       </div>
 
       <Swiper
-        className="font-black"
+        className="font-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[42%]"
         spaceBetween={50}
-        slidesPerView="3"
+        slidesPerView="1"
         effect="coverflow"
         grabCursor
         centeredSlides
@@ -61,11 +61,28 @@ export default function MainContainer() {
           delay: 2500,
           disableOnInteraction: true,
         }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 4,
+          },
+          720: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            effect: 'coverflow',
+          },
+
+          1300: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            effect: 'coverflow',
+          },
+        }}
       >
         {dailyboxoffice.map((movie, index) => (
           <SwiperSlide key={movie.movieCd}>
-            <div>
-              <div className="">
+            <div className="max-w-[90%] max-h-[90%]">
+              <div>
                 <img src={`https://top10.netflix.com/images/big_numbers/${index + 1}.png`} alt="number" width="64" height="64" className="object-cover self-start -mt-1 ml-7" />
               </div>
               <div className="">
@@ -73,7 +90,7 @@ export default function MainContainer() {
                   <h3 className="text-3xl text-center text-gray-900 truncate">
                     {movie.movieNm}
                   </h3>
-                  <p className="text-md text-gray-700 ml-3 mb-1">
+                  <p className="text-md text-gray-700 ml-3 mb-2">
                     누적&nbsp;
                     { Number(movie.audiAcc) > 10000 ? Math.floor(Number(movie.audiAcc) / 10000) : '1' }
                     만
