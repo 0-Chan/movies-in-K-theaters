@@ -134,6 +134,16 @@ const metadata = [
     poster: '85979',
     tags: ['뽀로로', '애니'],
   },
+  {
+    title: '몬스터 신부: 101번째 프로포즈',
+    poster: '86488',
+    tags: ['코미디', '판타지'],
+  },
+  {
+    title: '외계+인 1부',
+    poster: '85997',
+    tags: ['SF', '판타지'],
+  },
 ];
 
 export default metadata;
