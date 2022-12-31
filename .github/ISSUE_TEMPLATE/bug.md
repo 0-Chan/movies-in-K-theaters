@@ -7,20 +7,20 @@ assignees: ''
 
 ---
 
-**버그 설명**
+**- 버그를 설명해주세요.**
 A clear and concise description of what the bug is.
 
-**재현 방법**
+**- 버그를 재현할 방법**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+**- 어떻게 버그가 고쳐졌으면 기대 하시나요?**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+**- 스크린샷(option)**
 If applicable, add screenshots to help explain your problem.
 
 **Desktop :**
