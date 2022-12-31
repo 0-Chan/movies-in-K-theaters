@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-**- 무슨 문제를 해결하기 위한 기능인가요?**
+## **- 기존 문제**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**- 추가될 기능을 설명해주세요**
+## **- 추가 기능 설명**
 A clear and concise description of what you want to happen.
