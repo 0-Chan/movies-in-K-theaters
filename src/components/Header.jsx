@@ -34,19 +34,7 @@ export default function Header() {
               </li>
             </Link>
             <div className="mt-6">
-              <Dropdowns>
-                <ul className="ml-8 absolute bg-blue-500 py-1 text-sm text-gray-100 text-center z-10 rounded-b-md">
-                  <li>
-                    <a href="http://www.cgv.co.kr/ticket/" target="blank" rel="noreferrer" className="block py-2 px-4 font-black hover:underline">CGV</a>
-                  </li>
-                  <li>
-                    <a href="https://www.lottecinema.co.kr/NLCHS/Ticketing" target="blank" rel="noreferrer" className="block py-2 px-4 font-thin hover:underline">롯데시네마</a>
-                  </li>
-                  <li>
-                    <a href="https://www.megabox.co.kr/booking" target="blank" rel="noreferrer" className="block py-2 px-4 font-thin hover:underline">메가박스</a>
-                  </li>
-                </ul>
-              </Dropdowns>
+              <Dropdowns />
             </div>
           </ol>
         </nav>
