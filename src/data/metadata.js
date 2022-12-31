@@ -144,6 +144,21 @@ const metadata = [
     poster: '85997',
     tags: ['SF', '판타지'],
   },
+  {
+    title: '장화신은 고양이: 끝내주는 모험',
+    poster: '86689',
+    tags: ['애니메이션', '모험'],
+  },
+  {
+    title: '스위치',
+    poster: '86676',
+    tags: ['드라마', '감동'],
+  },
+  {
+    title: '더 퍼스트 슬램덩크',
+    poster: '86720',
+    tags: ['애니', '극장판', '농구'],
+  },
 ];
 
 export default metadata;
