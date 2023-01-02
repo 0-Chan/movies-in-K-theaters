@@ -1,4 +1,4 @@
-import convertDateFormat from './convertDateFormat';
+import { convertDateFormat } from './convertDateFormat';
 
 describe('convertDateFormat', () => {
   const date = new Date(2022, 11, 25);
