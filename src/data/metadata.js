@@ -159,6 +159,26 @@ const metadata = [
     poster: '86720',
     tags: ['애니', '극장판', '농구'],
   },
+  {
+    title: '3000년의 기다림',
+    poster: '86681',
+    tags: ['드라마', '판타지'],
+  },
+  {
+    title: '유령',
+    poster: '86728',
+    tags: ['액션', '설경구'],
+  },
+  {
+    title: '시간을 꿈꾸는 소녀',
+    poster: '86719',
+    tags: ['다큐멘터리', '무녀의 삶'],
+  },
+  {
+    title: '프린스 차밍',
+    poster: '86489',
+    tags: ['애니', '슈렉 제작진'],
+  },
 ];
 
 export default metadata;
