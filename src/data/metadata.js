@@ -144,6 +144,11 @@ const metadata = [
     poster: '85997',
     tags: ['SF', '판타지'],
   },
+  {
+    title: '3000년의 기다림',
+    poster: '86681',
+    tags: ['드라마', '판타지'],
+  },
 ];
 
 export default metadata;
