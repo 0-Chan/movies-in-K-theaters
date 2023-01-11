@@ -13,7 +13,11 @@ Vercel로 배포되었습니다. [[Demo](https://movies-in-k-theaters.vercel.app
 
 ## Tech Stack
 - React
+- Redux Toolkit
 - ESLint
+- Babel
+- WebPack
+- TailwindCSS
 
 ## Script
 ```bash
