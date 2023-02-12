@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { TrendingUp, TrendingDown } from 'react-feather';
+import { TrendingUp, TrendingDown, Minus } from 'react-feather';
 
 import { get } from '../utils';
 import onErrorImage from '../assets/images/onError-details.jpg';
@@ -29,9 +29,9 @@ export default function DetailsContainer({ rank }) {
   };
 
   return (
-    <>
+    <div className="h-screen">
       { metadata.filter((datum) => datum.title === targetBoxOffice?.movieNm).map((correspond) => (
-        <div key={correspond.poster} className="flex">
+        <div key={correspond.poster} className="min-h-fit flex">
           <div className="flex">
             <img
               src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_1000.jpg`}
@@ -85,14 +85,18 @@ export default function DetailsContainer({ rank }) {
               {
                 targetBoxOffice.rankInten > 0
                   ? <TrendingUp size="32px" className="text-red-700" />
-                  : <TrendingDown size="32px" className="text-blue-700" />
+                  : targetBoxOffice.rankInten < 0
+                    ? <TrendingDown size="32px" className="text-blue-700" />
+                    : <Minus size="32px" />
               }
-              {Math.abs(targetBoxOffice.rankInten)}
+              {
+                Math.abs(targetBoxOffice.rankInten)
+              }
               단계
             </div>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
