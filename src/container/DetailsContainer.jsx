@@ -31,8 +31,8 @@ export default function DetailsContainer({ rank }) {
   return (
     <div className="h-screen">
       { metadata.filter((datum) => datum.title === targetBoxOffice?.movieNm).map((correspond) => (
-        <div key={correspond.poster} className="min-h-fit flex">
-          <div className="flex">
+        <div key={correspond.poster} className="min-h-fit flex justify-center">
+          <div className="flex justify-center">
             <img
               src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_1000.jpg`}
               onError={handleError}

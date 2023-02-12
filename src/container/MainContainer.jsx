@@ -71,9 +71,9 @@ export default function MainContainer() {
       >
         {dailyboxoffice.map((movie, index) => (
           <SwiperSlide key={movie.movieCd}>
-            <div>
+            <div className="mx-auto my-0 w-2/3 sm:w-1/2 md:w-5/12 lg:w-full">
               <div>
-                <div className="flex justify-center sm:justify-start sm:ml-32 md:ml-52 lg:ml-0">
+                <div className="flex justify-center md:justify-start md:ml-32 lg:ml-0">
                   <img
                     src={`https://top10.netflix.com/images/big_numbers/${index + 1}.png`}
                     alt="number"
@@ -93,7 +93,7 @@ export default function MainContainer() {
               <li key={movie.movieCd}>
                 <Link to={`/boxoffice/${movie.rank}`}>
                   {metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
-                    <div key={correspond.poster} className="mx-auto my-0 w-2/3 sm:w-1/2 md:w-5/12 lg:w-full">
+                    <div key={correspond.poster}>
                       <img
                         src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_320.jpg`}
                         onError={handleError}
