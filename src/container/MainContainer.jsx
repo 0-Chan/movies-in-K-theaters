@@ -22,26 +22,24 @@ export default function MainContainer() {
   }
 
   const handleError = (e) => {
-    // e.target.src = '/images/onError-main.jpg';
     e.target.onerror = null;
   };
 
   SwiperCore.use([Autoplay]);
 
   return (
-    <div className="h-screen">
-      <div>
-        <h1 className="text-center font-semibold text-3xl md:text-6xl text-gray-700">
-          TOP 박스오피스
-        </h1>
+    <div className="h-screen flex justify-center">
+      <div className="text-center font-semibold text-3xl md:text-6xl text-gray-700">
+        TOP 박스오피스
       </div>
 
       <Swiper
-        className="font-black absolute top-1/2 left-1/2 transform -translate-x-[50%] -translate-y-[42%]"
+        className="font-black absolute justify-center pt-12 h-full"
         slidesPerView={1}
         effect="coverflow"
         grabCursor
         centeredSlides
+        centeredSlidesBounds
         navigation
         modules={[EffectCoverflow, Navigation]}
         pagination={{
@@ -61,15 +59,10 @@ export default function MainContainer() {
           disableOnInteraction: true,
         }}
         breakpoints={{
-          540: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          981: {
+          1024: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-
           1536: {
             slidesPerView: 4,
             spaceBetween: 30,
@@ -78,37 +71,36 @@ export default function MainContainer() {
       >
         {dailyboxoffice.map((movie, index) => (
           <SwiperSlide key={movie.movieCd}>
-            <div className="max-w-[95%] max-h-[95%]">
+            <div>
               <div>
-                <img src={`https://top10.netflix.com/images/big_numbers/${index + 1}.png`} alt="number" width="64" height="64" className="object-cover self-start -mt-1 ml-7" />
-              </div>
-              <div className="">
-                <div>
-                  <h3 className="text-3xl text-center text-gray-900 truncate">
-                    {movie.movieNm}
-                  </h3>
-                  <p className="text-md text-gray-700 ml-3 mb-2">
-                    누적&nbsp;
-                    { Number(movie.audiAcc) > 10000 ? Math.floor(Number(movie.audiAcc) / 10000) : '1' }
-                    만
-                  </p>
+                <div className="flex justify-center sm:justify-start sm:ml-32 md:ml-52 lg:ml-0">
+                  <img
+                    src={`https://top10.netflix.com/images/big_numbers/${index + 1}.png`}
+                    alt="number"
+                    className="w-10 h-10 md:w-16 md:h-16"
+                  />
                 </div>
+                <h3 className="text-3xl text-center text-gray-900 truncate">
+                  {movie.movieNm}
+                </h3>
+                <p className="text-md text-center text-gray-700">
+                  누적&nbsp;
+                  { Number(movie.audiAcc) > 10000 ? Math.floor(Number(movie.audiAcc) / 10000) : '1' }
+                  만
+                </p>
               </div>
 
               <li key={movie.movieCd}>
                 <Link to={`/boxoffice/${movie.rank}`}>
                   {metadata.filter((datum) => datum.title === movie.movieNm).map((correspond) => (
-                    <div key={correspond.poster} className="-mt-5">
+                    <div key={correspond.poster} className="mx-auto my-0 w-2/3 sm:w-1/2 md:w-5/12 lg:w-full">
                       <img
                         src={`https://img.cgv.co.kr/Movie/Thumbnail/Poster/0000${correspond.poster.slice(0, 2)}/${correspond.poster}/${correspond.poster}_320.jpg`}
                         onError={handleError}
                         alt="Movie postser"
-                        className="object-cover scale-95"
-                        width="512"
-                        height="256"
                       />
-                      <p className="text-center -mt-2">
-                        {correspond.tags.map((tag) => <span className="bg-indigo-100 text-indigo-800 text-lg font-semibold mr-2 px-2.5 rounded" key={tag}>{tag}</span>)}
+                      <p className="text-center">
+                        {correspond.tags.map((tag) => <span className="bg-indigo-100 text-indigo-800 text-sm md:text-lg font-semibold mr-2 px-2.5 rounded" key={tag}>{tag}</span>)}
                       </p>
                     </div>
                   ))}
