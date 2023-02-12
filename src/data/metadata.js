@@ -179,6 +179,31 @@ const metadata = [
     poster: '86489',
     tags: ['애니', '슈렉 제작진'],
   },
+  {
+    title: '타이타닉',
+    poster: '86793',
+    tags: ['고전 명작', '리마스터링'],
+  },
+  {
+    title: '교섭',
+    poster: '86157',
+    tags: ['드라마', '피랍'],
+  },
+  {
+    title: '바빌론',
+    poster: '86756',
+    tags: ['할리우드', '드라마'],
+  },
+  {
+    title: '다음 소희',
+    poster: '86752',
+    tags: ['드라마', '실제 사건'],
+  },
+  {
+    title: '상견니',
+    poster: '86750',
+    tags: ['대만', '드라마 원작'],
+  },
 ];
 
 export default metadata;
