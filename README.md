@@ -21,7 +21,7 @@ Vercel로 배포되었습니다. [[Demo](https://movies-in-k-theaters.vercel.app
 
 ## Script
 ```bash
-$ npm run dev
+$ npm run start
 ```
 ```bash
 $ npm run build
